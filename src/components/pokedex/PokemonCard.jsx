@@ -18,35 +18,35 @@ function PokemonCard({ url }) {
 		setPokemon(url);
 	};
 
-	const types = pokemon?.types.map((type) => type.type.name);
+	if (!pokemon) {
+		return <div className="loading">Cargando...</div>;
+	}
 
-	if (!types) return;
+	const types = pokemon?.types?.map((type) => type.type.name);
 
 	return (
 		<Link className="poke" to={`/pokedex/${pokemon?.name}`}>
 			<div className={`poke__card type--${types[0]}`}>
 				<div className="poke__card-header">
 					<img
-						src={pokemon?.sprites?.other?.dream_world?.front_default}
-						alt=""
+						src={pokemon?.sprites?.other?.dream_world?.front_default || ''}
+						alt={pokemon?.name}
 					/>
 				</div>
 				<div className="poke__card-body">
 					<h2 className="poke__card-name">{pokemon?.name}</h2>
 					<span className="poke__card-types">
-						{types?.map((type, index) => {
-							return (
-								<Fragment key={type}>
-									{index > 0 ? (
-										<>
-											{' /'} <span>{tipos[type]}</span>
-										</>
-									) : (
-										<span>{tipos[type]}</span>
-									)}
-								</Fragment>
-							);
-						})}
+						{types?.map((type, index) => (
+							<Fragment key={type}>
+								{index > 0 ? (
+									<>
+										{' /'} <span>{tipos[type]}</span>
+									</>
+								) : (
+									<span>{tipos[type]}</span>
+								)}
+							</Fragment>
+						))}
 					</span>
 
 					<p className="poke__card-type-label">Tipo</p>
