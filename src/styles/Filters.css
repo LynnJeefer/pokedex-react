@@ -1,0 +1,59 @@
+.select {
+	display: inline-block;
+	width: 40%;
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+.select__input {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 0.5em 1em;
+	border-radius: 4px;
+	font-size: 1em;
+	color: #333;
+	width: 100%;
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+		transform 0.2s ease-in-out;
+}
+
+.select__input:hover {
+	border-color: rgb(208, 73, 73);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+	transform: scale(1.02);
+}
+
+.select__input:focus {
+	border-color: rgb(170, 48, 48);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+	transform: scale(1.03);
+}
+
+/* Opciones del menú desplegable */
+.select__input option {
+	background-color: #fff;
+	padding: 0.5em 1em;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.select__input option:hover {
+	background-color: rgba(208, 73, 73, 0.1);
+	color: rgb(208, 73, 73);
+}
+
+.select__input option:active {
+	background-color: rgba(208, 73, 73, 0.2);
+	color: rgb(170, 48, 48);
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

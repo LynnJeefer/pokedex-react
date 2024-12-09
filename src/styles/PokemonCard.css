@@ -1,0 +1,371 @@
+.poke {
+	max-width: 320px;
+	width: 100%;
+	display: block;
+}
+
+.poke__card {
+	max-width: 320px;
+	width: 100%;
+	border: 8px solid #444;
+	overflow: hidden;
+	cursor: pointer;
+	animation: fadeIn 1s ease-in-out;
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.poke__card:hover {
+	transform: scale(1.05);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.poke__card-header {
+	position: relative;
+	background-color: #777;
+	width: 100%;
+	aspect-ratio: 1.8;
+	margin-bottom: 2em;
+	animation: slideInTop 1s ease-in-out;
+}
+
+.poke__card-header img {
+	position: absolute;
+	top: 1.25em;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 75%;
+	height: 100%;
+	animation: popIn 1s ease-out;
+}
+
+.poke__card-body {
+	padding: 0 1em 2em;
+	animation: fadeIn 1s ease-in-out;
+}
+
+.poke__card-name {
+	text-align: center;
+	text-transform: capitalize;
+	animation: fadeIn 1.2s ease-in-out;
+}
+
+.poke__card-types {
+	text-transform: capitalize;
+	font-size: 14px;
+	display: flex;
+	justify-content: center;
+	gap: 0.5em;
+	animation: fadeIn 1.4s ease-in-out;
+}
+
+.poke__card-type-label {
+	text-align: center;
+	font-size: 12px;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+	color: #888;
+}
+
+.poke__card-stats {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	justify-content: center;
+	gap: 1em;
+	animation: fadeIn 1.6s ease-in-ou;
+}
+
+.poke__card-stats-item {
+	text-align: center;
+	animation: zoomIn 1s ease-out;
+}
+
+.poke__card-stats-item span:first-child {
+	display: block;
+	font-size: 12px;
+	color: #888;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideInTop {
+	from {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes popIn {
+	0% {
+		transform: scale(0.8);
+		opacity: 0;
+	}
+	60% {
+		transform: scale(1.1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes zoomIn {
+	from {
+		transform: scale(0.8);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+/*color typos*/
+
+.type--normal {
+	border: 8px solid #7c3f4c;
+	color: #7c3f4c;
+}
+
+.type--normal .poke__card-header {
+	background: linear-gradient(
+		181.51deg,
+		#735259 -6.44%,
+		#bc6b7c 121.95%,
+		#7c3f4c 186.11%
+	);
+}
+.type--fighting {
+	border: 8px solid #96402a;
+	color: #96402a;
+}
+
+.type--fighting .poke__card-header {
+	background: linear-gradient(
+		176.83deg,
+		#96402a -8.78%,
+		#f1613c 169.09%,
+		#cb735d 242.33%
+	);
+}
+
+.type--flying {
+	border: 8px solid #0595c1;
+	color: #0595c1;
+}
+.type--flying .poke__card-header {
+	background: linear-gradient(
+		176.83deg,
+		#0595c1 -8.78%,
+		#70f56b 169.09%,
+		#6e58ea 242.33%
+	);
+}
+
+.type--poison {
+	border: 8px solid #a564e3;
+	color: #a564e3;
+}
+.type--poison .poke__card-header {
+	background: linear-gradient(
+		177.03deg,
+		#5b3184 -11.97%,
+		#a564e3 71.28%,
+		#ce9bff 135.64%
+	);
+}
+
+.type--ground {
+	border: 8px solid #d69638;
+	color: #d69638;
+}
+
+.type--ground .poke__card-header {
+	background: linear-gradient(
+		179.75deg,
+		#654008 -19.96%,
+		#895c1a 43.67%,
+		#d69638 138.4%
+	);
+}
+.type--rock {
+	border: 8px solid #8d8d94;
+	color: #8d8d94;
+}
+
+.type--rock .poke__card-header {
+	background: linear-gradient(
+		177.03deg,
+		#7e7e7e -11.97%,
+		#8d8d94 57.49%,
+		#d3d3d3 135.64%
+	);
+}
+
+.type--bug {
+	border: 8px solid #3bb039;
+	color: #3bb039;
+}
+
+.type--bug .poke__card-header {
+	background: linear-gradient(
+		177.56deg,
+		#62db60 -58.92%,
+		#3bb039 16.57%,
+		#aaffa8 209.53%
+	);
+}
+
+.type--ghost {
+	border: 8px solid #454aa8;
+	color: #454aa8;
+}
+.type--ghost .poke__card-header {
+	background: linear-gradient(
+		177.03deg,
+		#323569 -11.97%,
+		#454aa8 57.49%,
+		#787dda 135.64%
+	);
+}
+.type--steel {
+	border: 8px solid #5e736c;
+	color: #5e736c;
+}
+
+.type--steel .poke__card-header {
+	background: linear-gradient(
+		179.75deg,
+		#5e736c -19.96%,
+		#728881 43.67%,
+		#a8a8a8 138.4%
+	);
+}
+.type--fire {
+	border: 8px solid #e35825;
+	color: #e35825;
+}
+.type--fire .poke__card-header {
+	background: linear-gradient(
+		176.37deg,
+		#f96d6f -32.26%,
+		#e35825 22.55%,
+		#e8ae1b 125.72%
+	);
+}
+.type--water {
+	border: 8px solid #1479fb;
+	color: #1479fb;
+}
+.type--water .poke__card-header {
+	background: linear-gradient(
+		179.57deg,
+		#133258 -70.14%,
+		#1479fb 56.16%,
+		#82b2f1 214.85%
+	);
+}
+
+.type--grass {
+	border: 8px solid #abdac6;
+	color: #7ec6c5;
+}
+
+.type--grass .poke__card-header {
+	background: linear-gradient(
+		178.92deg,
+		#7ec6c5 0.92%,
+		#abdac6 47.96%,
+		#cae099 99.08%
+	);
+}
+.type--electric {
+	border: 8px solid #2b319b;
+	color: #2b319b;
+}
+.type--electric .poke__card-header {
+	background: linear-gradient(
+		179.75deg,
+		#0c1395 -19.96%,
+		#2b319b 43.67%,
+		#7075d9 138.4%
+	);
+}
+
+.type--psychic {
+	border: 8px solid #989ce5;
+	color: #989ce5;
+}
+
+.type--psychic .poke__card-header {
+	background: linear-gradient(
+		179.75deg,
+		#989ce5 -19.96%,
+		#56605f 43.67%,
+		#9fa3ee 138.4%
+	);
+}
+
+.type--ice {
+	border: 8px solid #6fbedf;
+	color: #6fbedf;
+}
+
+.type--ice .poke__card-header {
+	background: linear-gradient(
+		177.03deg,
+		#6fbedf -11.97%,
+		#64cbf5 47.77%,
+		#bdebfe 136.72%
+	);
+}
+
+.type--dragon {
+	border: 8px solid #56a4ae;
+	color: #6fbedf;
+}
+.type--dragon .poke__card-header {
+	background: linear-gradient(
+		179.75deg,
+		#478a93 -19.96%,
+		#56a4ae 43.67%,
+		#a2bec1 138.4%
+	);
+}
+
+.type--dark {
+	border: 8px solid #030706;
+	color: #030706;
+}
+.type--dark .poke__card-header {
+	background: linear-gradient(
+		177.03deg,
+		#030706 -11.97%,
+		#0d1211 57.49%,
+		#5a5e5d 135.64%
+	);
+}
+.type--fairy {
+	border: 8px solid #c23867;
+	color: #c23867;
+}
+.type--fairy .poke__card-header {
+	background: linear-gradient(
+		179.75deg,
+		#971b45 -19.96%,
+		#c23867 43.67%,
+		#cd7d98 138.4%
+	);
+}

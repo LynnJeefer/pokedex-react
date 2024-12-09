@@ -1,0 +1,128 @@
+.home {
+	display: grid;
+	place-content: center;
+	height: 100vh;
+	text-align: center;
+	opacity: 0;
+	animation: fadeIn 1s forwards;
+	/* background-image: url(./../assets/background-pokemon.jpg); */
+}
+
+.home__header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	animation: slideIn 1s 0.5s forwards;
+}
+
+.home__header img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.home__content {
+	padding: 1em;
+	z-index: 1;
+	opacity: 0;
+	animation: fadeIn 1s 1s forwards;
+}
+
+.home__footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	background-image: url('./../assets/home-footer.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	animation: slideUp 1s 1.5s forwards;
+}
+
+.home__title {
+	color: red;
+}
+
+.home__title,
+.home__text {
+	margin-bottom: 0.5em;
+	opacity: 0;
+	animation: fadeIn 1s 2s forwards;
+}
+
+.home__input {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 0.5em 1em;
+	border-radius: 4px 0 0 4px;
+	margin-bottom: 1em;
+	transition: transform 0.3s ease-in-out;
+}
+
+.home__input:focus {
+	transform: scale(1.05);
+}
+
+.home__btn {
+	background-color: rgb(208, 73, 73);
+	border: transparent;
+	padding: 0.5em 1em;
+	border-radius: 0 4px 4px 0;
+	color: #fff;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+}
+
+.home__btn:hover {
+	background-color: rgb(179, 48, 48);
+	transform: scale(1.05);
+}
+
+.home__link {
+	color: rgb(208, 73, 73);
+	font-weight: 700;
+	transition: color 0.3s ease;
+}
+
+.home__link:hover {
+	color: rgb(179, 48, 48);
+}
+
+.btn--radius {
+	border-radius: 4px;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes slideIn {
+	0% {
+		transform: translateY(-30px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(30px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
