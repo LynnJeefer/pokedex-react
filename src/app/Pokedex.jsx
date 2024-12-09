@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Search from '../components/pokedex/Search';
 import Filters from '../components/pokedex/Filters';
-import { useFetch } from '../hooks/UseFetch';
+import useFetch from '../hooks/useFetch';
 import { useEffect, useState } from 'react';
 import { useNameContext } from '../contexts/nameContext';
 

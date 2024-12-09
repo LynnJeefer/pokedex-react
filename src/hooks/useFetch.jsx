@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useState } from 'react';
-
 function useFetch() {
 	const [data, setData] = useState(null);
 	const [error, setError] = useState(null);
@@ -12,10 +11,10 @@ function useFetch() {
 			.get(url)
 			.then((res) => setData(res.data))
 			.catch((err) => console.log(err.message))
-			.finally();
+			.finally(() => setLoading(false));
 	};
 
 	return [data, dataFetch, loading, error];
 }
 
-export { useFetch };
+export default useFetch;

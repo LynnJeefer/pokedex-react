@@ -1,5 +1,5 @@
 import { Fragment, useEffect } from 'react';
-import { useFetch } from '../../hooks/UseFetch';
+import useFetch from '../../hooks/useFetch';
 import { Link } from 'react-router-dom';
 
 import { tipos } from '../../utils/helpers';

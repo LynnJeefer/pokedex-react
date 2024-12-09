@@ -1,9 +1,10 @@
 import { Link, useParams } from 'react-router-dom';
-import { useFetch } from '../hooks/UseFetch';
+
 import { useEffect } from 'react';
 import { tipos } from '../utils/helpers';
 import './../styles/Details.css';
 import PokemonHeader from '../components/pokedex/PokemonHeader';
+import useFetch from '../hooks/useFetch';
 
 function Details() {
 	const params = useParams();
