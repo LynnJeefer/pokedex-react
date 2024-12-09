@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { types, useNameContext } from '../contexts/nameContext';
 import './../styles/Home.css';
 import pokedexImage from './../assets/ttitulo-pokedex.png';
-import footerHome from './../assets/home-footer.png';
 
 function Home() {
 	const inputRef = useRef();
